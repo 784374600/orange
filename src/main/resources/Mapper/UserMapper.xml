@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--namespace 路径 指向dao层接口-->
+<mapper namespace="com.example.orangeshare.Dao.UserMapper" >
+      <insert id="addUser" parameterType="com.example.orangeshare.Pojo.User" >
+          insert into user( ID,name,sex,PSW) values(#{ID},#{name},#{sex},#{PSW})
+      </insert>
+      <select id="getUser" parameterType="String" resultType="com.example.orangeshare.Pojo.User">
+          select ID,name,sex,user_photo,anum from user where ID=#{ID}
+      </select>
+      <select id="getANum" parameterType="String" resultType="int">
+          select anum from user where ID=#{ID}
+      </select>
+    <select id="getName" parameterType="String" resultType="String">
+          select name from user where ID=#{ID}
+      </select>
+</mapper>

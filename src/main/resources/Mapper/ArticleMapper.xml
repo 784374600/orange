@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--namespace 路径 指向dao层接口-->
+<mapper namespace="com.example.orangeshare.Dao.ArticleMapper" >
+    <insert id="addArticle" parameterType="User">
+          insert into article( ID,AID,title,content,aPhoto) values(#{ID},#{AID},#{title},#{content},#{aphoto})
+      </insert>
+     <delete id="deleteArticle">
+          delete from article where ID=#{ID} and aID=#{AID}
+      </delete>
+    <select id="getArticle"  resultType="com.example.orangeshare.Pojo.Article">
+          select * from article where ID=#{ID} and AID=#{AID}
+    </select>
+    <select id="getArticles" parameterType="String">
+          select * from article where ID=#{ID}
+    </select>
+    <select id="index" resultType="com.example.orangeshare.Pojo.Article">
+          select * from article  order by stars limit 0,20
+    </select>
+</mapper>

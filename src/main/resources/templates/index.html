@@ -1,0 +1,51 @@
+<!doctype html >
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <base th:href="@{/}">
+    <meta charset="UTF-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <title>橘子分享——你且在此处等等，我买个橘子去去就回</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="JS/index.js"></script>
+    <link type="text/css" rel="stylesheet" href="CSS/waterfall.css"/>
+    <link type="text/css" rel="stylesheet" href="CSS/header.css"/>
+</head>
+<body>
+<div id="header">
+    <img src="images/orange.jpg">
+    <div class="menu" >热门</div>
+    <div class="menu" >发现</div>
+    <div class="menu" >生活</div>
+    <div class="menu" >游戏</div>
+    <div class="menu" >摄影</div>
+    <div class="menu" >旅游</div>
+    <div class="menu" >学习</div>
+    <div class="menu" >美食</div>
+    <div class="menu" >创作</div>
+    <div class="menu" >服装</div>
+    <div class="menu" >二次元</div>
+    <div class="avator" > <img src="images/undefined.png"></div>
+
+</div>
+<div id="mainphoto"></div>
+
+<div id="main" >
+    <!--每一个小块-->
+    <div class="pin" th:each="boxej:${boxes}">
+        <a th:href="${boxej.url}">
+            <div class="box">
+                <img th:src="${boxej.aphoto}">
+                <div class="userinfo">
+                    <img th:src="${boxej.user_photo}">
+                    <span th:text="${boxej.name}"> 爱你摸摸哒</span>
+                </div>
+                <div class="love">
+                    <img src="images/love.png"></div>
+                <article th:text="${boxej.des}">麻烦你拉反了你发马哥马哥方梦阀阀门</article>
+            </div>
+        </a>
+
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <base th:href="@{/}">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="CSS/work.css" charset="UTF-8"/>
+</head>
+<body>
+<div class="main-wrapper">
+    <header><!--页头开始-->
+        <nav>
+            <div class="logo" ><img th:src="${user_photo}"   alt=""> <a href="">Mr.cai</a></div>
+            <ul>
+                <li><a href="" class="active">首页</a></li>
+                <li><a href="">链接3</a></li>
+                <li><a href="">链接4</a></li>
+            </ul>
+        </nav>
+        <div id="banner">
+            <div class="inner">
+                <h1>Mr.cai</h1>
+                <p class="sub-heading">Lorem ipsum dolor sit amet, .</p>
+                <button>关注我</button>
+                <div class="more">
+                    更多
+                </div>
+            </div>
+            <img th:src="${user_photo}">
+        </div>
+    </header><!--页头结束-->
+
+    <div class="content"><!--内容开始-->
+        <section class="green-section">
+            <div class="wrapper">
+                <div>
+                    <h2 th:text="${title}">标题</h2>
+                    <div class="hr"></div>
+                    <p class="sub-heading" th:text="${des}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aut deserunt dicta dolore exercitationem facere fuga, harum impedit maxime molestiae nemo non nostrum obcaecati pariatur possimus quod similique, vel velit.</p>
+                </div>
+                <div class="icon-grop">
+                    <span class="icon">items1</span>
+                    <span class="icon">items2</span>
+                    <span class="icon">items3</span>
+                </div>
+            </div>
+        </section>
+        <section class="gray-section" th:each="section:${sections}" th:switch="${section.type}">
+            <div class="article-preview clearfix"  th:case="1">
+                <div class="text-section" >
+                    <h2 th:text="${section.title}">又一个标题</h2>
+                    <div class="sub-heading" th:text="${section.sub_heading}">我是副标题</div>
+                    <p th:text="${section.des}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium architecto dolores dolorum, enim eos esse, expedita fugit minus mollitia necessitatibus pariatur qui recusandae sapiente sequi ullam voluptatibus. Quam, rerum!</p>
+                </div>
+                <div class="img-section">
+                    <img th:src="${section.photo}"/>
+                </div>
+            </div>
+            <div class="article-preview clearfix" th:case="2">
+                <div class="img-section">
+                    <img th:src="${section.photo}" alt="">
+                </div>
+                <div class="text-section" >
+                    <h2 th:text="${section.title}">又一个标题</h2>
+                    <div class="sub-heading" th:text= "${section.sub_heading}">我是副标题</div>
+                    <p th:text="${section.des}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium architecto dolores dolorum, enim eos esse, expedita fugit minus mollitia necessitatibus pariatur qui recusandae sapiente sequi ullam voluptatibus. Quam, rerum!</p>
+                </div>
+            </div>
+        </section>
+        <section class="purple-section">
+            <div class="wrapper">
+                <div class="heading-wrapper">
+                    <h2>又一个标题</h2>
+                    <div class="hr"></div>
+                    <div class="sub-heading">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, iure odit? Alias aliquam corporis cum dignissimos est et expedita nam, non quidem recusandae reiciendis veniam voluptatem. Enim ipsa nihil quibusdam.</div>
+                </div>
+                <div class="card-group clearfix">
+                    <div class="card">
+                        <h3>标题</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laudantium maxime rem ut! Aliquid amet atque corporis delectus distinctio omnis quasi, quibusdam sit? Beatae esse eum saepe voluptate? Repellat, soluta.</p>
+                    </div>
+                    <div class="card">
+                        <h3>标题</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laudantium maxime rem ut! Aliquid amet atque corporis delectus distinctio omnis quasi, quibusdam sit? Beatae esse eum saepe voluptate? Repellat, soluta.</p>
+                    </div>
+                    <div class="card">
+                        <h3>标题</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laudantium maxime rem ut! Aliquid amet atque corporis delectus distinctio omnis quasi, quibusdam sit? Beatae esse eum saepe voluptate? Repellat, soluta.</p>
+                    </div>
+                    <div class="card">
+                        <h3>标题</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laudantium maxime rem ut! Aliquid amet atque corporis delectus distinctio omnis quasi, quibusdam sit? Beatae esse eum saepe voluptate? Repellat, soluta.</p>
+                    </div>
+                    <div class="card">
+                        <h3>标题</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laudantium maxime rem ut! Aliquid amet atque corporis delectus distinctio omnis quasi, quibusdam sit? Beatae esse eum saepe voluptate? Repellat, soluta.</p>
+                    </div>
+                    <div class="card">
+                        <h3>标题</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure laudantium maxime rem ut! Aliquid amet atque corporis delectus distinctio omnis quasi, quibusdam sit? Beatae esse eum saepe voluptate? Repellat, soluta.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div><!--内容结束-->
+
+    <footer><!--页脚开始-->
+        <ul class="share-group">
+            <!--li{item$}-->
+            <li>item1</li>
+            <li>item2</li>
+            <li>item3</li>
+            <li>item4</li>
+            <li>item5</li>
+        </ul>
+        <div class="copy">
+            &copy;张小窝 - 2017
+        </div>
+    </footer><!--页脚结束-->
+</div>
+</body>
+</html>

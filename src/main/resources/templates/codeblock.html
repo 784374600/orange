@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>codeblock</title>
+</head>
+<body>
+<div  th:fragment="style1"  class="article-preview clearfix">
+    <div class="text-section">
+        <h2 th:text="${section.title}"></h2>
+        <div class="sub-heading" >我是副标题</div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium architecto dolores dolorum, enim eos esse, expedita fugit minus mollitia necessitatibus pariatur qui recusandae sapiente sequi ullam voluptatibus. Quam, rerum!</p>
+    </div>
+    <div class="img-section">
+        <img src="img/pic01.jpg" alt="">
+    </div>
+</div>
+
+</body>
+</html>

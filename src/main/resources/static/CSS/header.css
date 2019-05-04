@@ -1,0 +1,60 @@
+#header{
+    background-color: transparent;
+     height: 40px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0 auto;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    top:0;
+
+}
+#header>img{
+      position: relative;
+      margin-top: 5px;
+       left:10px;
+       width: 30px;
+       height: 30px;
+       display: inline;
+       vertical-align: middle;
+}
+#header .menu{
+      margin: 0 10px;
+      width:fit-content;
+      height:30px;
+      border-bottom-style: solid;
+      border-color: white;
+      padding: 5px;
+      display: inline;
+      text-align: center;
+      color:white;
+}
+#header .avator {
+      width: 30px;
+       height: 30px;
+    display: inline;
+
+}
+#header .avator>img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-right: 30px;
+    float: right;
+    display: flex;
+    cursor: pointer;
+}
+#header>div>img{
+     width: 20px;
+     height: 40px;
+     display: flex;
+     border-radius: 50%;
+     align-items: center;
+     justify-content: center;
+     overflow: hidden;
+     float: right;
+ }

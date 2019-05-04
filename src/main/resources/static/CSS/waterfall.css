@@ -1,0 +1,77 @@
+body{
+    min-width: 900px;
+}
+#mainphoto{
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 500px;
+    background-image: url(http://192.168.1.108:8080/orange/images/bg.jpg);
+}
+#main {
+    position: relative;
+    top:500px;
+    width: 100%;
+    background-color: blue;
+}
+#main .pin{
+    background: transparent;
+    width:220px;
+    height: auto;
+    padding: 15px 0px 0px 15px; /*上 右 下 左*/
+    float: left;
+}
+
+/*设置每一个瀑布流块中的图像样式*/
+#main .pin .box{
+    width: 200px;
+    height: auto;
+    padding: 10px;
+    background: #FFF;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 6px #ccc; /*中间投影*/
+    border-radius: 5px; /*圆角*/
+}
+#main .pin .box>img{
+    width: 200px;
+}
+#main .pin  article{
+    width: 100%;
+    height: auto;
+
+}
+#main .pin .box .userinfo{
+    width: 200px;
+    display: inline;
+}
+#main .pin .box .userinfo>img{
+    width: 34px;
+    height: 34px;
+    display: flex;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    float: left;
+}
+#main .pin .box .userinfo span{
+    height: 34px;
+    position: relative;
+    line-height: 34px;
+   padding: 10px;
+    text-align: center;
+}
+#main .pin .box .love{
+    height:20px;
+    width:20px;
+    display: inline;
+    margin-top:7px ;
+    float: right;
+}
+#main .pin .box .love>img{
+      height:20px;
+      width:20px;
+      cursor: pointer;
+}
+
+

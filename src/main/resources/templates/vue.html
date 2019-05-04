@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vuejs</title>
+    <script src="vue.js"></script>
+</head>
+<body>
+<div id="app">
+  helloworld{{msg}}
+</div>
+<div>{{msg}}</div>
+<script>
+     // Vue.component('item',{
+        //  template: '<p>啊哈哈哈</p>'
+     // })
+     var item={
+          template:'<p> 简单</p>'
+     }
+      new Vue({
+          el:"#app",
+          components: {
+
+          },
+          template:'<h1> gh</h1>',
+           data:{
+              msg:"dan"
+           },
+      })
+</script>
+</body>

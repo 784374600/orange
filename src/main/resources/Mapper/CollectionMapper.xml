@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.orangeshare.Dao.CollectionMapper" >
+    <insert id="add" parameterType="com.example.orangeshare.Pojo.Collect">
+         insert into collections(id,from_id,from_aid) values(#{id},#{from_id},#{from_aid})
+    </insert>
+    <delete id="delete" parameterType="com.example.orangeshare.Pojo.Collect">
+          delete  from collections where id=#{id} and from_aid=#{from_aid} and from_id=#{from_id}
+    </delete>
+    <select id="getCollections" parameterType="String" resultType="com.example.orangeshare.Pojo.Collect">
+          select from_id,from_aid from collections where id=#{id}
+    </select>
+</mapper>

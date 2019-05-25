@@ -3,15 +3,33 @@
 <!--namespace 路径 指向dao层接口-->
 <mapper namespace="com.example.orangeshare.Dao.UserMapper" >
       <insert id="addUser" parameterType="com.example.orangeshare.Pojo.User" >
-          insert into user( ID,name,sex,PSW) values(#{ID},#{name},#{sex},#{PSW})
+          insert into user(id,psw) values(#{id},#{psw})
       </insert>
       <select id="getUser" parameterType="String" resultType="com.example.orangeshare.Pojo.User">
-          select ID,name,sex,user_photo,anum from user where ID=#{ID}
+          select id,name,sex,user_photo,anum,sign,fans,focus from user where id=#{id}
       </select>
-      <select id="getANum" parameterType="String" resultType="int">
-          select anum from user where ID=#{ID}
+      <select id="getANum" parameterType="String" resultType="Integer">
+          select anum from user where id=#{id}
       </select>
     <select id="getName" parameterType="String" resultType="String">
-          select name from user where ID=#{ID}
+          select name from user where id=#{id}
       </select>
+    <select id="getPsw" parameterType="String" resultType="String">
+        select psw from user where id=#{id}
+    </select>
+    <update id="addANum" parameterType="String" >
+          update user set anum=anum+1 where id=#{id}
+    </update>
+    <update id="updateUser" parameterType="com.example.orangeshare.Pojo.User" >
+          update user set name=#{name},sex=#{sex},sign=#{sign},user_photo=#{user_photo} where id=#{id}
+    </update>
+    <select id="contain" parameterType="String" resultType="int">
+        select count(*) from user where id=#{id}
+    </select>
+    <update id="setFans">
+        update  user set fans=fans+#{num} where id=#{id}
+    </update>
+    <update id="setFocus">
+        update  user set focus=focus+#{num} where id=#{id}
+    </update>
 </mapper>

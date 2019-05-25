@@ -11,7 +11,7 @@ public class IndexArticleBox {
     String title;
     String des;
     int    stars;
-    String url="http://"+ IPUtils.getIP()+":8080/orange/article?";
+    String url="http://"+ IPUtils.getIP()+":8081/orange/article?";
     public String getID() {
         return ID;
     }

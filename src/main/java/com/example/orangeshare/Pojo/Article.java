@@ -1,37 +1,19 @@
 package com.example.orangeshare.Pojo;
 
-public class Article {
-    String ID;
-    String AID;
-    int    stars;
+public class Article implements Comparable<Article>{
+    String id;
+    String aid;
+    int stars;
     String des;
     String title;
-    String content;
-    String aphoto;
+    int collections;
+    int   sort;
 
-    public String getID() {
-        return ID;
+    public Article(String id, String aid) {
+        this.id = id;
+        this.aid = aid;
     }
 
-    public String getDes() {
-        return des;
-    }
-
-    public void setDes(String des) {
-        this.des = des;
-    }
-
-    public void setID(String ID) {
-        this.ID = ID;
-    }
-
-    public String getAID() {
-        return AID;
-    }
-
-    public void setAID(String AID) {
-        this.AID = AID;
-    }
 
     public int getStars() {
         return stars;
@@ -41,6 +23,72 @@ public class Article {
         this.stars = stars;
     }
 
+    public int getCollections() {
+        return collections;
+    }
+
+    public void setCollections(int collections) {
+        this.collections = collections;
+    }
+
+    public int getSort() {
+        return sort;
+    }
+
+    public void setSort(int sort) {
+        this.sort = sort;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getAid() {
+        return aid;
+    }
+
+    public void setAid(String aid) {
+        this.aid = aid;
+    }
+
+    String imgs;
+    String titles;
+    String deses;
+
+    public String getTitles() {
+        return titles;
+    }
+
+    public void setTitles(String titles) {
+        this.titles = titles;
+    }
+
+    public String getDeses() {
+        return deses;
+    }
+
+    public void setDeses(String deses) {
+        this.deses = deses;
+    }
+
+
+
+    public String getDes() {
+        return des;
+    }
+
+    public void setDes(String des) {
+        this.des = des;
+    }
+
+
+
+
+
     public String getTitle() {
         return title;
     }
@@ -49,41 +97,54 @@ public class Article {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getAphoto() {
-        return aphoto;
-    }
-
-    public void setAphoto(String aphoto) {
-        this.aphoto = aphoto;
-    }
-
-    public Article(String ID, String AID, String title, String des) {
-        this.ID = ID;
-        this.AID = AID;
-        this.title = title;
-        this.des = des;
-    }
-
-    public Article(String ID, String AID, int stars, String des, String title, String content, String aphoto) {
-        this.ID = ID;
-        this.AID = AID;
+    public Article(String id, String aid, int sort, String title, String des,String imgs, String titles, String deses ,int stars,int collections) {
+        this.id = id;
+        this.aid = aid;
         this.stars = stars;
         this.des = des;
         this.title = title;
-        this.content = content;
-        this.aphoto = aphoto;
+        this.collections = collections;
+        this.sort = sort;
+        this.imgs = imgs;
+        this.titles = titles;
+        this.deses = deses;
+    }
+
+    public Article(String id, String aid, int sort, String title, String des,String imgs, String titles, String deses) {
+        this.id = id;
+        this.aid = aid;
+        this.des = des;
+        this.title = title;
+        this.imgs = imgs;
+        this.titles = titles;
+        this.deses = deses;
+        this.sort=sort;
     }
 
 
-    public  String toString(){
-        return ID+" "+AID+" "+aphoto+" "+ title+" "+content+" "+stars;
+    public String getImgs() {
+        return imgs;
+    }
+
+    public void setImgs(String imgs) {
+        this.imgs = imgs;
+    }
+
+    @Override
+    public int hashCode() {
+        return id.hashCode()+aid.hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        Article s=(Article)obj;
+        if(id.equals(s.id)&& aid.equals(s.aid))
+            return  true;
+        return false;
+    }
+
+    @Override
+    public int compareTo(Article o) {
+        return o.stars-this.stars;
     }
 }

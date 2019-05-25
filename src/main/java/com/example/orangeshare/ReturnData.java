@@ -22,4 +22,26 @@ public class ReturnData {
     public void setData(Object data) {
         this.data = data;
     }
+
+
+    public ReturnData() {
+    }
+
+    public static ReturnData success(Object data){
+         ReturnData returnData=new ReturnData();
+         returnData.setStatus("1");
+         returnData.setData(data);
+         return returnData;
+    }
+    public  static ReturnData success(){
+        ReturnData returnData=new ReturnData();
+        returnData.setStatus("1");
+        return returnData;
+    }
+    public static ReturnData fail(String message){
+        ReturnData returnData=new ReturnData();
+        returnData.setData(message);
+        return returnData;
+    }
+
 }

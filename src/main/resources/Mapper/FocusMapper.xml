@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.orangeshare.Dao.FocusMapper" >
+    <insert id="add" >
+         insert into focus(id,from_id) values(#{id},#{from_id})
+    </insert>
+    <delete id="delete" >
+          delete  from focus where id=#{id} and from_id=#{from_id}
+    </delete>
+    <select id="getFocus" parameterType="String" resultType="String">
+          select from_id from focus where id=#{id}
+    </select>
+</mapper>

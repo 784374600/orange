@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.orangeshare.Dao.UserHistoryMapper" >
+       <select id="contain"  resultType="int">
+           select count(*)  from user_history where id=#{id},word=#{word}
+       </select>
+       <select id="get" resultType="com.example.orangeshare.Pojo.UserHistory">
+              select * from user_history where id=#{id}
+       </select>
+       <insert id="add" >
+            insert into user_history(id,word) values(#{id},#{word})
+       </insert>
+       <update id="inc" >
+            update  user_history set  importance=importance+#{num} where id=#{id} and  word=#{word}
+       </update>
+       <delete id="delete" parameterType="String">
+            delete  from user_history where id=#{id} and  word=#{word}
+       </delete>
+</mapper>

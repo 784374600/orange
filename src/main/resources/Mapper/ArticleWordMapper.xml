@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.orangeshare.Dao.ArticleWordMapper">
+    <insert id="add" parameterType="com.example.orangeshare.Pojo.ArticleWord" >
+         insert into article_word(word,id,aid) values(#{word},#{id},#{aid})
+    </insert>
+    <delete id="delete">
+        delete from article_word where id=#{id} and aid=#{aid}
+    </delete>
+    <select id="search" parameterType="String" resultType="com.example.orangeshare.Pojo.ArticleWord">
+          select id,aid from article_word where  word=#{word}
+    </select>
+</mapper>

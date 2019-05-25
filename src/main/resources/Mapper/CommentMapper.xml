@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.example.orangeshare.Dao.CommentMapper" >
+    <insert id="add" parameterType="com.example.orangeshare.Pojo.Comment">
+         insert into comments(id,aid,from_id) values(#{id},#{aid},#{from_id})
+    </insert>
+    <delete id="delete" parameterType="com.example.orangeshare.Pojo.Comment">
+          delete  from comments where id=#{id} and aid=#{aid} and from_id=#{from_id}
+    </delete>
+    <select id="getComments"  resultType="com.example.orangeshare.Pojo.Comment">
+          select * from comments where id=#{id} and aid=#{aid}
+    </select>
+</mapper>
